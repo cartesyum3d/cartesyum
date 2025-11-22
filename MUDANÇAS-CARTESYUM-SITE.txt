@@ -1,0 +1,15 @@
+MUDANÇAS-CARTESYUM-SITE
+
+retirar botões "visitar site" das divs dos sites recomendados e fazer com que toda a div leve pro link externo e botar cursor pointer 
+
+mudar marca d'agua para o logo da cartesyum
+
+um circulo branco ao fundo da logo que aparece no footer
+
+utilizar as 3 imagens no drive no layout do "sobre nos", com a seguinte arranjo: esquerda, direita e esquerda
+
+em sobre nos, ABS/ASA mudar "resistente ao calor" por "resistente a UV"
+
+usar ícone png de impressora 3d no lugar da impressora de na pagina "nossos serviços" na coluna "impressão 3d - fdm"
+
+na pagina "nossos serviços" substituir "Modelagem e impressão 3D" (3º serviço) por "Realidade aumentada", que marcos vai me mandar
