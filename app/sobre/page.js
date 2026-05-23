@@ -20,25 +20,34 @@ import pla from "../../public/pla.png";
 import tpu from "../../public/tpu.png";
 import petg from "../../public/petg.png";
 import abs from "../../public/abs.png";
-import info from "../../public/bg-info.png";
+import logobw from "../../public/cartesyum-logo-bw.png";
+import owner from "../../public/owner.jpg";
+import bambulabcombosq from "../../public/bambu-lab-combo-sq.jpg";
+import plareel from "../../public/pla-reel.jpg";
 // STYLE
 import { theme, pages } from "../../lib/constants";
 
 const AboutSection = () => {
   const aboutSections = [
     {
+      reverse: false,
+      photo: owner,
       icon: <User className="w-8 h-8" />,
       title: "Quem somos?",
       content:
         "Prazer, me chamo Marcos e sou o fundador da Cartesyum. Apaixonado por tecnologia e inovação, criei esta empresa para democratizar o acesso à impressão 3D de qualidade. Nossa missão é transformar ideias em realidade, oferecendo soluções personalizadas para cada cliente, seja um hobbyista iniciante ou uma empresa em busca de protótipos profissionais.",
     },
     {
+      reverse: true,
+      photo: bambulabcombosq,
       icon: <Settings className="w-8 h-8" />,
       title: "Equipamentos",
       content:
         "Na Cartesyum, contamos com a impressora FDM Bambu Lab A1, uma das mais avançadas do mercado. Este equipamento de última geração oferece precisão excepcional, velocidade otimizada e confiabilidade comprovada. Com tecnologia de auto-calibração e sistema de controle inteligente, garantimos consistência e qualidade em cada impressão realizada.",
     },
     {
+      reverse: false,
+      photo: plareel,
       icon: <Package className="w-8 h-8" />,
       title: "Principais Materiais FDM",
       content:
@@ -51,20 +60,25 @@ const AboutSection = () => {
       name: "PLA",
       description: "Fácil impressão, biodegradável",
       color: "bg-green-500",
-      src: pla
+      src: pla,
     },
     {
       name: "PETG",
       description: "Resistente, transparente",
       color: "bg-blue-500",
-      src: petg
+      src: petg,
     },
-    { name: "TPU", description: "Flexível, durável", color: "bg-purple-500", src: tpu },
+    {
+      name: "TPU",
+      description: "Flexível, durável",
+      color: "bg-purple-500",
+      src: tpu,
+    },
     {
       name: "ABS/ASA",
-      description: "Resistente ao calor",
+      description: "Resistente à UV",
       color: "bg-red-500",
-      src: abs
+      src: abs,
     },
   ];
 
@@ -80,9 +94,9 @@ const AboutSection = () => {
     >
       <Header currentPage={pages.ABOUT} />
       <div
-        className="hidden lg:block absolute inset-0 z-0 bg-no-repeat opacity-2 hue-rotate-90 saturate-200"
+        className="hidden lg:block absolute inset-0 z-0 bg-no-repeat opacity-3 hue-rotate-90 saturate-200"
         style={{
-          backgroundImage: `url(${info.src})`,
+          backgroundImage: `url(${logobw.src})`,
           backgroundSize: "17rem",
           backgroundPosition: "right 4rem top 2rem",
         }}
@@ -107,21 +121,23 @@ const AboutSection = () => {
               key={section.title}
               className={`group w-full h-full /s/ transition-smooth hover:shadow-red-500 hover:border-red-500/50 border border-stone-300 rounded-xl bg-white`}
             >
-              <CardContent className="py-7 px-7 lg:py-8 lg:px-10 gap-6 /w/ h-full /d/ flex flex-col lg:flex-row">
-                <div className="mb-1 lg:mb-6 /d/ flex items-start justify-start">
-                  <div
-                    className={`w-16 h-16 /d/ flex items-center justify-center /s/ rounded-xl bg-red-100 ${theme.textBrand} group-hover:bg-red-700 group-hover:text-white transition-smooth`}
-                  >
-                    {section.icon}
-                  </div>
+              <CardContent className={`py-7 px-7 lg:py-8 lg:px-10 gap-7 /w/ h-full /d/ flex flex-col ${section.reverse ? `lg:flex-row-reverse` : `lg:flex-row`} rounded-xl`}>
+                <div className="relative /w/ w-full h-70 lg:h-[40vh] /d/ flex items-center justify-center rounded-xl border-1 border-neutral-200">
+                  <Image
+                    src={section.photo}
+                    alt={"imagem"}
+                    fill
+                    className="object-cover rounded-xl"
+                    priority
+                  />
                 </div>
-                <div className="flex flex-col items-start justify-start">
+                <div className={`flex flex-col justify-start ${section.reverse ? `items-end` : `items-start`}`}>
                   <div
-                    className={`orbitron mb-4 /t/ text-2xl font-bold ${theme.textBrand} text-left`}
+                    className={`orbitron mb-4 /t/ text-2xl font-bold ${theme.textBrand} ${section.reverse ? `text-right` : `text-left`}`}
                   >
                     {section.title}
                   </div>
-                  <p className="oxanium text-lg text-gray-700 leading-relaxed text-left flex-grow">
+                  <p className={`oxanium text-lg text-gray-700 leading-relaxed flex-grow ${section.reverse ? `text-right` : `text-left`}`}>
                     {section.content}
                   </p>
                 </div>
@@ -165,7 +181,8 @@ const AboutSection = () => {
             ))}
           </div>
         </div>
-        {/*Extra Message -- Sobre*/}
+
+        {/*Tip Message -- Sobre*/}
         <div className="oxanium my-18 lg:my-24 /s/ text-center">
           <div
             className={`mx-auto py-5 px-8 /w/ max-w-4xl /d/ flex flex-col items-center justify-center /s/ bg-red-50/90 rounded-xl border-3 ${theme.borderSecondary}`}
@@ -200,13 +217,14 @@ const AboutSection = () => {
                 variant="outline"
                 size="sm"
                 className="lg:self-end /w/ px-5 h-11 /s/ border-1 border-red-700 text-red-700 /hover/ hover:text-red-700 hover:border-red-600 hover:bg-red-200/70 transition-smooth"
-                onClick={() => window.open(resource.url, "_blank")}
+                onClick={() => goTo("/servicos")}
               >
                 Ver Serviços
               </Button>
             </div>
           </div>
         </div>
+
       </div>
 
       <Footer />

@@ -136,7 +136,8 @@ const ProcessSection = () => {
               {resources.map((resource) => (
                 <Card
                   key={resource.name}
-                  className="group oxanium /s/ border-1 border-stone-300 bg-white /hover/ transition-smooth hover:border-red-500"
+                  className="group oxanium /s/ border-1 border-stone-300 bg-white /hover/ transition-smooth hover:border-red-500 cursor-pointer"
+                  onClick={() => window.open(resource.url, "_blank")}
                 >
                   <CardContent className="h-full">
                     <div className="pt-6 gap-3 /w/ h-full /d/ flex flex-col justify-between items-center /t/ text-center">
@@ -146,8 +147,8 @@ const ProcessSection = () => {
                             resource.name === "MakerWorld"
                               ? "border-1 border-black/10"
                               : resource.name === "Printables"
-                              ? "border-1 border-orange-500/25"
-                              : ""
+                                ? "border-1 border-orange-500/25"
+                                : ""
                           }`}
                         >
                           <Image
@@ -165,15 +166,6 @@ const ProcessSection = () => {
                           {resource.description}
                         </div>
                       </div>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="self-end /w/ w-full /s/ border-1 border-red-600 text-red-600 /hover/ hover:text-red-700 hover:border-red-600 hover:bg-red-200/70 transition-smooth"
-                        onClick={() => window.open(resource.url, "_blank")}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Visitar Site
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -208,7 +200,7 @@ const ProcessSection = () => {
                 size="lg"
                 className="rounded-lg bg-red-100 text-red-800 /hover/ hover:bg-red-700 hover:text-white transition-smooth"
                 onClick={() =>
-                  window.open("https://wa.me/5522999160594", "_blank")
+                  window.open("https://wa.me/5522992068674", "_blank")
                 }
               >
                 Falar com Especialista

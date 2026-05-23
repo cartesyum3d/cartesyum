@@ -1,15 +1,54 @@
-MUDANÇAS-CARTESYUM-SITE
+MUDANÇAS-CARTESYUM-SITE:
 
-retirar botões "visitar site" das divs dos sites recomendados e fazer com que toda a div leve pro link externo e botar cursor pointer 
+1 retirar botões "visitar site" das divs dos sites recomendados e fazer com que toda a div leve pro link externo e botar cursor pointer (------OK------)
 
-mudar marca d'agua para o logo da cartesyum
+2 mudar marca d'agua para o logo da cartesyum (------OK------)
 
-um circulo branco ao fundo da logo que aparece no footer
+3 um circulo branco ao fundo da logo que aparece no footer (------OK------)
 
-utilizar as 3 imagens no drive no layout do "sobre nos", com a seguinte arranjo: esquerda, direita e esquerda
+4 utilizar as 3 imagens no drive no layout do "sobre nos", com a seguinte arranjo: esquerda, direita e esquerda (------OK------)
 
-em sobre nos, ABS/ASA mudar "resistente ao calor" por "resistente a UV"
+~ ~ ~
 
-usar ícone png de impressora 3d no lugar da impressora de na pagina "nossos serviços" na coluna "impressão 3d - fdm"
+5 em sobre nos, ABS/ASA mudar "resistente ao calor" por "resistente a UV" (------OK------)
 
-na pagina "nossos serviços" substituir "Modelagem e impressão 3D" (3º serviço) por "Realidade aumentada", que marcos vai me mandar
+6 na pagina "nossos serviços" substituir "Modelagem e impressão 3D" (3º serviço) por "Realidade aumentada", que marcos vai me mandar (------OK------)
+
+7 usar ícone png de impressora 3d no lugar da impressora de na pagina "nossos serviços" na coluna "impressão 3d - fdm" (------OK------)
+
+8 última página (------OK------)
+
+~ ~ ~
+
+ATÉ FEV/26:
+
+antigo arquivo .env.example:
+# Facebook Pixel – ID do pixel (ex: 123456789012345)
+# Obtenha em: Gerenciador de Eventos do Meta (meta.com/events_manager)
+# Necessário para o build: use NEXT_PUBLIC_ para variáveis acessíveis no cliente.
+NEXT_PUBLIC_FB_PIXEL_ID=
+
+ID real:
+25965037433125298
+
+
+AGNÓSTICOS:
+ESTÁ BOM PARA SEO?
+1 Enviar formulário para algum lugar (------OK------)
+3 Instalar pixel Facebook (evento page view) no site Nextjs (------OK------)
+
+ESTILIZAÇÃO/CUSTOMIZAÇÃO:
+2 Trocar fanpage Facebook (------OK------)
+4 Solicitar Orçamento vai para whatsapp (------OK------)
+5 Solicitar Orçamento (botões pelo site) levar para whatsapp (------OK------)
+6 Alterar ícone a casinha (em Modelagem 3D) (------OK------)
+7 Ver serviços na pagina sobre levar para portfolio (------...------) ---> Firebase???
+8 Na pagina FAQ retirar botão Email (------OK------)
+11 FAQ quebra a linha na visualização para mobile (------OK------)
+12 Trocar favicon (------OK------)
+
+HOST:
+9 Hospedar site Nextjs no servidor compartilhado (Login/Senha) (------OK------)
+10 Trocar DNS do Registro BR (Login: MAOLI6644 / Senha: M@rcos.oli08) (------OK------)
+
+

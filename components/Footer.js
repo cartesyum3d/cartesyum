@@ -20,7 +20,7 @@ const Footer = () => {
     {
       name: "Facebook",
       logo: facebookIcon,
-      url: "https://www.facebook.com/profile.php?id=61577000861258",
+      url: "https://www.facebook.com/profile.php?id=61586127481717",
     },
     {
       name: "YouTube",
@@ -39,7 +39,7 @@ const Footer = () => {
       icon: <Phone className="w-5 h-5" />,
       label: "Telefone",
       value: "22 99916-0594",
-      link: "tel:+5522999160594",
+      link: "tel:+5522992068674",
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -190,7 +190,7 @@ const Footer = () => {
                 size="sm"
                 className="w-full bg-white text-green-600 hover:bg-white/90"
                 onClick={() =>
-                  window.open("https://wa.me/5522999160594", "_blank")
+                  window.open("https://wa.me/5522992068674", "_blank")
                 }
               >
                 <ExternalLink className="w-4 h-4" />

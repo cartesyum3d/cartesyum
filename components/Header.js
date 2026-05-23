@@ -69,7 +69,7 @@ function Header({ currentPage }) {
           <div className="hidden lg:flex items-center space-x-4">
             <div className={`flex items-center space-x-3 ${theme.textAccent}`}>
               <a
-                href="https://wa.me/5522999160594"
+                href="https://wa.me/5522992068674"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 transition-smooth"
@@ -136,7 +136,7 @@ function Header({ currentPage }) {
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <a
-                  href="https://wa.me/5522999160594"
+                  href="https://wa.me/5522992068674"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-accent hover:text-primary transition-smooth py-2"

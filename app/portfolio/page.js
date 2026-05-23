@@ -14,11 +14,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 // CONSTANTS
 import { theme, pages } from "../../lib/constants";
+// IMAGES
 import depo1 from "../../public/depo-1.jpeg";
 import depo2 from "../../public/depo-2.jpeg";
 import depo3 from "../../public/depo-3.jpeg";
 import depo4 from "../../public/depo-4.jpg";
-import folder from "../../public/bg-folder.png";
+import logobw from "../../public/cartesyum-logo-bw.png";
 
 function ImageDialog({ isOpen, setIsOpen, imageSrc, altText }) {
   if (!isOpen) return null;
@@ -195,11 +196,11 @@ function page() {
     >
       <Header currentPage={pages.PORTFOLIO} />
       <div
-        className="hidden lg:block absolute inset-0 z-0 bg-no-repeat opacity-2 hue-rotate-90 saturate-200"
+        className="hidden lg:block absolute inset-0 z-0 bg-no-repeat opacity-3 hue-rotate-90 saturate-200"
         style={{
-          backgroundImage: `url(${folder.src})`,
-          backgroundSize: "16em",
-          backgroundPosition: "right 3rem top 2rem",
+          backgroundImage: `url(${logobw.src})`,
+          backgroundSize: "17rem",
+          backgroundPosition: "right 4rem top 2rem",
         }}
       ></div>
       <div className="px-4 z-10 /d/ lg:flex lg:flex-col lg:items-center">
