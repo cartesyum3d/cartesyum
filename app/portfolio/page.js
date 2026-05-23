@@ -209,7 +209,7 @@ function page() {
           <div
             className={`orbitron mb-6 /t/ text-4xl md:text-5xl font-bold ${theme.textBrand}`}
           >
-            Nosso Portfólio
+            Nossos Produtos
           </div>
           <p className="oxanium text-xl text-muted-foreground font-body max-w-3xl mx-auto">
             Conheça alguns dos projetos incríveis que já realizamos para nossos
