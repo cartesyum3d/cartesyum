@@ -1,4 +1,5 @@
 import { Orbitron, Oxanium } from 'next/font/google';
+import Script from 'next/script';
 import "./globals.css";
 import FloatingWpp from "../components/FloatingWpp";
 
@@ -82,24 +83,24 @@ fbq('track', 'PageView');
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <head>
-        {metaPixelScript && (
-          <script
-            dangerouslySetInnerHTML={{ __html: metaPixelScript }}
-          />
-        )}
-      </head>
       <body className={`${orbitron.variable} ${oxanium.variable} antialiased`}>
         {PIXEL_ID && (
-          <noscript>
-            <img
-              height="1"
-              width="1"
-              style={{ display: 'none' }}
-              alt=""
-              src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
+          <>
+            <Script
+              id="meta-pixel"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{ __html: metaPixelScript }}
             />
-          </noscript>
+            <noscript>
+              <img
+                height="1"
+                width="1"
+                style={{ display: 'none' }}
+                alt=""
+                src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
+              />
+            </noscript>
+          </>
         )}
         {children}
         <FloatingWpp />
