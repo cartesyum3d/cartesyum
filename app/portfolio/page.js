@@ -21,6 +21,13 @@ import depo3 from "../../public/depo-3.jpeg";
 import depo4 from "../../public/depo-4.jpg";
 import logobw from "../../public/cartesyum-logo-bw.png";
 
+const testProduct = {
+  id: "imagens-sacras-test",
+  nome: "Imagens sacras",
+  tipo: "Produto teste",
+  imagem: "/portfolio-imagens-sacras-test.jpeg",
+};
+
 function ImageDialog({ isOpen, setIsOpen, imageSrc, altText }) {
   if (!isOpen) return null;
   return (
@@ -60,7 +67,7 @@ function ImageDialog({ isOpen, setIsOpen, imageSrc, altText }) {
 }
 
 function Portfolio() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([testProduct]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -69,13 +76,11 @@ function Portfolio() {
       try {
         const portfolioRef = collection(db, "portfolio");
         const portfolioSnapshot = await getDocs(portfolioRef);
-        if (!portfolioSnapshot.empty) {
-          const portfolioList = portfolioSnapshot.docs.map((post) => ({
-            id: post.id,
-            ...post.data(),
-          }));
-          setProducts(portfolioList);
-        }
+        const portfolioList = portfolioSnapshot.docs.map((post) => ({
+          id: post.id,
+          ...post.data(),
+        }));
+        setProducts([...portfolioList, testProduct]);
       } catch (error) {
         console.error("Erro ao buscar items:", error);
       }
