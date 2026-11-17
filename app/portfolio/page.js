@@ -7,11 +7,6 @@ import Footer from "../../components/Footer";
 import Image from "next/image";
 // FIREBASE
 import { db, collection, getDocs } from "../../firebase";
-// SWIPER
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 // CONSTANTS
 import { theme, pages } from "../../lib/constants";
 // IMAGES
@@ -358,64 +353,55 @@ function Portfolio() {
     fetchAllItems();
   }, []);
 
+  const firstRowProducts = products.filter((_, index) => index % 2 === 0);
+  const secondRowProducts = products.filter((_, index) => index % 2 === 1);
+  const renderProductCard = (item, duplicate = false) => (
+    <div
+      key={`${item.id}-${item.imagem}-${duplicate ? "duplicate" : "original"}`}
+      className={`portfolio-marquee-item p-3 md:p-4 h-[27rem] md:h-[31rem] flex flex-col shadow-sm bg-white rounded-xl border ${theme.borderCard} hover:border-red-500 hover:shadow-md hover:shadow-red-200 transition-shadow cursor-pointer`}
+      aria-hidden={duplicate ? "true" : undefined}
+      onClick={() => {
+        setSelectedImage(item.imagem);
+        setIsOpen(true);
+      }}
+    >
+      <div className="relative mb-4 w-full h-[21rem] md:h-96 rounded-lg overflow-hidden">
+        <Image
+          src={item.imagem}
+          alt={duplicate ? "" : item.nome}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="flex flex-col gap-1">
+        <h3 className="oxanium mb-1 text-xl md:text-2xl font-medium text-stone-800">
+          {item.nome}
+        </h3>
+        <p
+          className={`oxanium px-2 pt-1 pb-0.5 font-semibold w-fit rounded-md text-sm text-white italic tracking-wider ${theme.bgAccent}`}
+        >
+          {item.tipo}
+        </p>
+      </div>
+    </div>
+  );
   return (
     <div className="mb-16 /w/ w-full /d/ flex items-center justify-center">
       {products.length ? (
-        <div className="lg:w-[92%] w-[95%] /s/ border-1 border-stone-500/0">
-          <Swiper
-            style={{
-              "--swiper-navigation-color": "#fcfcfc",
-              "--swiper-navigation-size": "2.1rem",
-              "--swiper-navigation-sides-offset": "1.3rem",
-            }}
-            modules={[Navigation]}
-            navigation
-            loop={true}
-            spaceBetween={20}
-            slidesPerView={3}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
-              1920: { slidesPerView: 5 },
-            }}
-            className="!overflow-y-visible"
-          >
-            <div className="oxanium p-5">
-              {products.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className={`p-4 h-120 /d/ flex flex-col /s/ shadow-sm bg-white rounded-xl border-1 ${theme.borderCard} /hover/ hover:border-red-500 hover:shadow-md hover:shadow-red-200 transition-shadow cursor-pointer`}
-                    onClick={() => {
-                      setSelectedImage(item.imagem);
-                      setIsOpen(true);
-                    }}
-                  >
-                    {/*Photo*/}
-                    <div className="relative mb-4 /w/ w-full h-96 /s/ rounded-lg overflow-hidden">
-                      <Image
-                        src={item.imagem}
-                        alt={item.nome}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    {/*Text*/}
-                    <div className="flex flex-col gap-1">
-                      <h3 className="oxanium mb-1 /t/ text-2xl font-medium text-stone-800">
-                        {item.nome}
-                      </h3>
-                      <p
-                        className={`oxanium px-2 pt-1 pb-0.5 font-semibold w-fit rounded-md text-sm text-white italic tracking-wider ${theme.bgAccent}`}
-                      >
-                        {item.tipo}
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+        <div className="lg:w-[92%] w-[95%] flex flex-col gap-5">
+          {[firstRowProducts, secondRowProducts].map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="portfolio-marquee"
+              role="region"
+              aria-label={`Linha ${rowIndex + 1} de produtos do portfólio`}
+            >
+              <div className={`portfolio-marquee-track ${rowIndex === 1 ? "portfolio-marquee-reverse" : ""}`}>
+                {row.map((item) => renderProductCard(item))}
+                {row.map((item) => renderProductCard(item, true))}
+              </div>
             </div>
-          </Swiper>
+          ))}
         </div>
       ) : (
         <div className="oxanium my-5 /t/ text-red-600 text-lg">
