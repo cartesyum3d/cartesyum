@@ -200,7 +200,7 @@ const ProcessSection = () => {
                 size="lg"
                 className="rounded-lg bg-red-100 text-red-800 /hover/ hover:bg-red-700 hover:text-white transition-smooth"
                 onClick={() =>
-                  window.open("https://wa.me/5522992068674", "_blank")
+                  window.open("https://wa.me/5522999160594", "_blank")
                 }
               >
                 Falar com Especialista

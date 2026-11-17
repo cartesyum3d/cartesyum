@@ -168,7 +168,7 @@ const HeroSection = () => {
                 className="oxanium px-9 py-7 /t/ text-bold text-lg /s/ rounded-xl bg-linear-150 border-1 border-red-800 from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 hover:border-red-900 text-white"
               >
                 <a
-                  href="https://wa.me/5522992068674"
+                  href="https://wa.me/5522999160594"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-x-2"

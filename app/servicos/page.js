@@ -5,6 +5,8 @@ import {
   Layers,
   ArrowRight,
   FlagTriangleRight,
+  Wrench,
+  Presentation,
 } from "lucide-react";
 // COMPONENTS
 import Header from "../../components/Header";
@@ -48,6 +50,7 @@ const ServicesPage = () => {
         "Otimização para impressão 3D",
         "Prototipagem virtual",
         "Documentação técnica completa",
+        "Criação a partir de esboços, fotos e descrições",
       ],
     },
     {
@@ -66,6 +69,32 @@ const ServicesPage = () => {
         "Consultoria especializada",
         "Iteração e refinamento",
         "Garantia de qualidade",
+      ],
+    },
+    {
+      icon: <Printer className="w-10 h-10" />,
+      title: "Manutenção de impressoras 3D",
+      description:
+        "Fazemos manutenção em impressoras FDM das marcas Bambu Lab, Anycubic, Creality e Elegoo. O equipamento deve ser levado até nossa sede para avaliação, e o serviço é realizado mediante orçamento.",
+      features: [
+        "Manutenção preventiva",
+        "Substituição de peças",
+        "Lubrificação e limpeza",
+        "Análise e prognóstico de manutenção",
+        "Avaliação na sede mediante orçamento",
+      ],
+    },
+    {
+      icon: <Presentation className="w-10 h-10" />,
+      title: "Palestras e minicursos",
+      description:
+        "Fazemos palestras educativas sobre o impacto da impressão 3D na sociedade, na indústria e na educação. Aplicamos a interdisciplinaridade por meio da impressão 3D e possibilitamos aos alunos visualizar, na prática, conceitos de matemática, física e química.",
+      features: [
+        "O futuro da impressão 3D",
+        "Impressão 3D e a ciência",
+        "Impressão 3D na sociedade",
+        "Impressão 3D na indústria e na educação",
+        "Aulas práticas interdisciplinares com impressão 3D",
       ],
     },
   ];
@@ -141,7 +170,7 @@ const ServicesPage = () => {
                   className={`oxanium /w/ w-full /s/ border-0 ${theme.bgOffwhite} group-hover:bg-red-700 group-hover:text-white transition-smooth`}
                 >
                   <a
-                    href="https://wa.me/5522992068674"
+                    href="https://wa.me/5522999160594"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-x-2"
@@ -153,6 +182,17 @@ const ServicesPage = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="oxanium mb-12 lg:w-[90%] /d/ flex flex-col gap-4 text-gray-800 leading-relaxed">
+          <p>
+            Oferecemos impressão 3D de alta qualidade nos mais variados materiais. Trabalhamos com PLA, PETG, TPU 95A, ABS, ASA, PA-6, PA-12, PC e PP, além de materiais reforçados com fibra de vidro (GF) e fibra de carbono (CF). Assim, contamos com diferentes opções de materiais para os projetos de impressão 3D.
+          </p>
+          <p>
+            Fazemos medições in loco e prototipagem para a indústria em geral. Esse trabalho pode envolver peças automotivas, peças náuticas e projetos personalizados, a partir das medidas e necessidades de cada projeto.
+          </p>
+          <p>
+            Temos à nossa disposição uma farm de impressoras cartesianas, modelos Core XY fechados e impressoras multimateriais. Essa estrutura reúne diferentes configurações de equipamentos para os projetos desenvolvidos pela Cartesyum.
+          </p>
         </div>
         {/*Extra Message -- Services*/}
         <div className="oxanium my-18 lg:my-24 /s/ text-center">
@@ -182,7 +222,7 @@ const ServicesPage = () => {
               size="lg"
               className="rounded-lg bg-red-100 text-red-800 /hover/ hover:bg-red-700 hover:text-white transition-smooth"
               onClick={() =>
-                window.open("https://wa.me/5522992068674", "_blank")
+                window.open("https://wa.me/5522999160594", "_blank")
               }
             >
               Falar com Especialista

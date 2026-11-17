@@ -28,6 +28,47 @@ const testProduct = {
   imagem: "/portfolio-imagens-sacras-test.jpeg",
 };
 
+const additionalProducts = [
+  {
+    id: "decoracao-natal",
+    nome: "Decoração de Natal",
+    tipo: "Decoração",
+    imagem: "/portfolio-decoracao-natal.jpeg",
+  },
+  {
+    id: "peca-industrial-asa",
+    nome: "Peça industrial em ASA",
+    tipo: "Peça industrial",
+    imagem: "/portfolio-peca-industrial-asa.jpeg",
+  },
+  {
+    id: "trofeu-personalizado",
+    nome: "Troféu personalizado",
+    tipo: "Personalizado",
+    imagem: "/portfolio-trofeu-personalizado.jpeg",
+  },
+  {
+    id: "decoracao-recem-nascido",
+    nome: "Decoração para recém nascido",
+    tipo: "Decoração",
+    imagem: "/portfolio-decoracao-recem-nascido.jpeg",
+  },
+];
+
+const hiddenProductNames = new Set([
+  "display de letras",
+  "modelos decorativos",
+  "pecas de substituicao",
+  "chaveiro personalizado",
+  "chaveiro de times",
+]);
+
+const normalizeProductName = (name = "") =>
+  name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
 function ImageDialog({ isOpen, setIsOpen, imageSrc, altText }) {
   if (!isOpen) return null;
   return (
@@ -67,7 +108,7 @@ function ImageDialog({ isOpen, setIsOpen, imageSrc, altText }) {
 }
 
 function Portfolio() {
-  const [products, setProducts] = useState([testProduct]);
+  const [products, setProducts] = useState([testProduct, ...additionalProducts]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -80,7 +121,10 @@ function Portfolio() {
           id: post.id,
           ...post.data(),
         }));
-        setProducts([...portfolioList, testProduct]);
+        const visiblePortfolioList = portfolioList.filter(
+          (item) => !hiddenProductNames.has(normalizeProductName(item.nome))
+        );
+        setProducts([...visiblePortfolioList, testProduct, ...additionalProducts]);
       } catch (error) {
         console.error("Erro ao buscar items:", error);
       }

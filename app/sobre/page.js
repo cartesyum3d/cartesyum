@@ -35,7 +35,7 @@ const AboutSection = () => {
       icon: <User className="w-8 h-8" />,
       title: "Quem somos?",
       content:
-        "Prazer, me chamo Marcos e sou o fundador da Cartesyum. Apaixonado por tecnologia e inovação, criei esta empresa para democratizar o acesso à impressão 3D de qualidade. Nossa missão é transformar ideias em realidade, oferecendo soluções personalizadas para cada cliente, seja um hobbyista iniciante ou uma empresa em busca de protótipos profissionais.",
+        "Prazer, me chamo Marcos e sou o fundador da Cartesyum. Cursei Engenharia Mecânica na UFRJ, em Macaé, e fiz intercâmbio na França pelo programa BRAFITEC. Sou apaixonado por tecnologia e inovação e criei a empresa com a missão de democratizar o acesso à impressão 3D de qualidade. Oferecemos soluções personalizadas para transformar ideias em realidade, atendendo desde hobbyistas iniciantes até empresas em busca de protótipos profissionais.",
     },
     {
       reverse: true,
@@ -43,7 +43,7 @@ const AboutSection = () => {
       icon: <Settings className="w-8 h-8" />,
       title: "Equipamentos",
       content:
-        "Na Cartesyum, contamos com a impressora FDM Bambu Lab A1, uma das mais avançadas do mercado. Este equipamento de última geração oferece precisão excepcional, velocidade otimizada e confiabilidade comprovada. Com tecnologia de auto-calibração e sistema de controle inteligente, garantimos consistência e qualidade em cada impressão realizada.",
+        "Temos impressoras cartesianas e Core XY, em versões abertas e fechadas, além de impressoras multimateriais. Entre os equipamentos disponíveis, há modelos com volume de impressão superior a 300 × 300 × 300 mm³.",
     },
     {
       reverse: false,
@@ -51,37 +51,28 @@ const AboutSection = () => {
       icon: <Package className="w-8 h-8" />,
       title: "Principais Materiais FDM",
       content:
-        "Trabalhamos com uma ampla variedade de materiais para atender diferentes necessidades: PLA (ideal para iniciantes e protótipos), PETG (resistente e transparente), TPU (flexível para aplicações especiais), e ABS/ASA (duráveis para peças funcionais). Cada material é cuidadosamente selecionado para garantir os melhores resultados em seus projetos.",
+        "Trabalhamos com diferentes materiais para projetos de impressão 3D. As opções incluem PLA, PLA Wood, PLA Marble, PETG, PETG-CF, TPU 95A, ABS, ASA, ASA Aero, PA-6, PA-12, PC e PP. Também oferecemos materiais reforçados com fibra de vidro (GF) e fibra de carbono (CF), além de materiais retardantes à chama (FR).",
     },
   ];
 
   const materials = [
-    {
-      name: "PLA",
-      description: "Fácil impressão, biodegradável",
-      color: "bg-green-500",
-      src: pla,
-    },
-    {
-      name: "PETG",
-      description: "Resistente, transparente",
-      color: "bg-blue-500",
-      src: petg,
-    },
-    {
-      name: "TPU",
-      description: "Flexível, durável",
-      color: "bg-purple-500",
-      src: tpu,
-    },
-    {
-      name: "ABS/ASA",
-      description: "Resistente à UV",
-      color: "bg-red-500",
-      src: abs,
-    },
+    { name: "PLA", description: "Filamento PLA", color: "bg-green-500", src: pla },
+    { name: "PLA Wood", description: "PLA com madeira", color: "bg-amber-700", src: pla },
+    { name: "PLA Marble", description: "PLA com efeito mármore", color: "bg-stone-500", src: pla },
+    { name: "PETG", description: "Filamento PETG", color: "bg-blue-500", src: petg },
+    { name: "PETG-CF", description: "PETG reforçado com fibra de carbono", color: "bg-slate-700", src: petg },
+    { name: "TPU 95A", description: "TPU com dureza 95A", color: "bg-purple-500", src: tpu },
+    { name: "ABS", description: "Filamento ABS", color: "bg-red-500", src: abs },
+    { name: "ASA", description: "Filamento ASA", color: "bg-orange-500", src: abs },
+    { name: "ASA Aero", description: "Filamento ASA Aero", color: "bg-rose-500", src: abs },
+    { name: "PA-6", description: "Poliamida 6", color: "bg-indigo-500", src: abs },
+    { name: "PA-12", description: "Poliamida 12", color: "bg-violet-500", src: abs },
+    { name: "PC", description: "Policarbonato", color: "bg-cyan-600", src: abs },
+    { name: "PP", description: "Polipropileno", color: "bg-teal-600", src: abs },
+    { name: "GF", description: "Reforçado com fibra de vidro", color: "bg-gray-600", src: abs },
+    { name: "CF", description: "Reforçado com fibra de carbono", color: "bg-neutral-800", src: abs },
+    { name: "FR", description: "Retardante à chama", color: "bg-yellow-600", src: abs },
   ];
-
   const router = useRouter();
 
   const goTo = (path) => {
@@ -164,7 +155,7 @@ const AboutSection = () => {
                   >
                     <Image
                       src={material.src}
-                      alt="Cartesyum"
+                      alt={`Ícone do material ${material.name}`}
                       className="w-[70%] invert object-contain"
                     />
                   </div>

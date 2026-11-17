@@ -39,7 +39,15 @@ const FAQSection = () => {
     {
       question: "Qual é o tamanho máximo de impressão?",
       answer:
-        "Nossa impressora Bambu Lab A1 tem volume de impressão de 256 x 256 x 256mm. Para projetos maiores, podemos dividir o modelo em partes menores que se encaixam perfeitamente, ou recomendar alternativas de design que se adequem às limitações técnicas.",
+        "Nosso maior volume de impressão disponível é de 350 × 350 × 350 mm³. Se o projeto ultrapassar essas dimensões, avaliamos a possibilidade de dividi-lo em partes menores ou adaptar o modelo.",
+    },
+    {
+      question: "Vocês vendem filamentos?",
+      answer: "Não. No momento, não comercializamos filamentos de nenhuma marca.",
+    },
+    {
+      question: "Vocês fazem manutenção?",
+      answer: "Sim, fazemos manutenção mediante orçamento. Para avaliar o equipamento, é necessário trazê-lo até nossa sede. Após a avaliação, informamos o orçamento do serviço.",
     },
     {
       question: "Vocês oferecem pós-processamento?",
@@ -140,7 +148,7 @@ const FAQSection = () => {
                 size="lg"
                 className="rounded-lg bg-red-100 text-red-800 hover:bg-red-700 hover:text-white transition-smooth gap-2"
                 onClick={() =>
-                  window.open("https://wa.me/5522992068674", "_blank")
+                  window.open("https://wa.me/5522999160594", "_blank")
                 }
               >
                 <MessageCircle className="w-5 h-5" />

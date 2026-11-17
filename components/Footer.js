@@ -38,8 +38,8 @@ const Footer = () => {
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Telefone",
-      value: "22 99916-0594",
-      link: "tel:+5522992068674",
+      value: "+55 22 99916-0594",
+      link: "tel:+5522999160594",
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -158,6 +158,7 @@ const Footer = () => {
                 { label: "Serviços", link: "servicos" },
                 { label: "Portfólio", link: "portfolio" },
                 { label: "Sobre nós", link: "sobre" },
+                { label: "Blog", link: "blog" },
                 { label: "FAQ", link: "faq" },
               ].map((item) => (
                 <button
@@ -190,7 +191,7 @@ const Footer = () => {
                 size="sm"
                 className="w-full bg-white text-green-600 hover:bg-white/90"
                 onClick={() =>
-                  window.open("https://wa.me/5522992068674", "_blank")
+                  window.open("https://wa.me/5522999160594", "_blank")
                 }
               >
                 <ExternalLink className="w-4 h-4" />
